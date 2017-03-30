@@ -23,7 +23,7 @@ public class UserDAOProxy implements IUserDAO {
     public boolean findLogin(User user) throws Exception {
         boolean flag=false;
         try {
-            flag=dao.findLogin(user);//调用真实主题
+            flag=dao.findLogin(user);
         } catch (Exception e) {
             throw e;
         }finally{
