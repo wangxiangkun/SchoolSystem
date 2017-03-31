@@ -1,5 +1,3 @@
-<%@ page import="java.util.Iterator" %>
-<%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.
   User: wxk
@@ -12,30 +10,50 @@
 <head>
     <title>Login</title>
 </head>
+<script type = "text/javascript" >
+    function check() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var studenttype = document.getElementById("studenttype");
+        var teachertype = document.getElementById("teachertype");
+
+        if (null == username || "" == username) {
+            alert("请输入用户名");
+            return false;
+        }
+
+        if (null == password || "" == password) {
+            alert("请输入密码");
+            return false;
+        }
+
+        if ((!studenttype.checked) && (!teachertype.checked)) {
+            alert("请选择用户类型");
+            return false;
+        }
+
+        return true;
+    }
+
+    function Reset() {
+        document.getElementById("username").value = null;
+        document.getElementById("password").value = null;
+        document.getElementById("studenttype").checked = false;
+        document.getElementById("teachertype").checked = false;
+    }
+
+</script>
 <body>
-    <center><h2>用户登录程序</h2></center>
+    <center><h2>用户登录</h2></center>
     <center>
-        <%
-            request.setCharacterEncoding("GBK");
-        %>
-        <%
-            List<String> info=(List<String>)request.getAttribute("info");
-            if(info!=null){
-                Iterator<String> iter=info.iterator();
-                while(iter.hasNext()){
-        %>
-        <h4><%=iter.next()%></h4>
-        <%
-                }
-            }
-        %>
-    </center>
-    <center>
-        <form action="LoginServlet" method="post" onSubmit="return validate(this)">
-            用户名:<input type="text" name="name"><br>
-            密  码:<input type="text" name="password"><br>
+        <form action="LoginServlet" method="post" onsubmit="return check()">
+            用户名:<input type="text" id="username" name="username"><br>
+            密  码:<input type="text" id="password" name="password"><br>
+            学生: <input type="radio" id="studenttype" name="usertype" value="student"><br>
+            教师: <input type="radio" id="teachertype" name="usertype" value="teacher"><br>
+            <%--<input class="btn" value="登录" id="login" type="button" onclick="Submit()">--%>
             <input type="submit" value="登录">
-            <input type="reset" value="重置">
+            <input class="btn" value="重置" id="reset" type="button" onclick="Reset()">
         </form>
     </center>
 </body>
