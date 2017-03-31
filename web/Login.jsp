@@ -5,7 +5,7 @@
   Time: 11:49
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <title>Login</title>
@@ -44,8 +44,8 @@
 
 </script>
 <body>
-    <center><h2>用户登录</h2></center>
-    <center>
+    <div style="text-align: center">
+        <h2>用户登录</h2>
         <form action="LoginServlet" method="post" onsubmit="return check()">
             用户名:<input type="text" id="username" name="username"><br>
             密  码:<input type="text" id="password" name="password"><br>
@@ -55,6 +55,6 @@
             <input type="submit" value="登录">
             <input class="btn" value="重置" id="reset" type="button" onclick="Reset()">
         </form>
-    </center>
+    </div>
 </body>
 </html>
