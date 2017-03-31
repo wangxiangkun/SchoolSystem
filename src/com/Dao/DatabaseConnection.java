@@ -12,7 +12,7 @@ public class DatabaseConnection {
     //数据库连接地址
     private static final String DBURL = "jdbc:mysql://localhost:3306/school_system";
     private static final String DBUSER = "root";
-    private static final String DBPASS = "";
+    private static final String DBPASS = "123456";
     private Connection connection = null;
 
     public DatabaseConnection() throws Exception {
