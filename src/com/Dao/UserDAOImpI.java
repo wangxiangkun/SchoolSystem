@@ -21,14 +21,15 @@ public class UserDAOImpI implements IUserDAO {
     public boolean findLogin(User user) throws Exception {
         boolean flag = false;
         try {
-            String sql = "select name from user where name=? and password=? and usertype=?";
+            String sql = "select userpri from user where username=? and password=? and usertype=?";
             pstmt = conn.prepareStatement(sql);//实例化操作
             pstmt.setString(1, user.getUsername());
             pstmt.setString(2, user.getPassword());
             pstmt.setString(3, user.getUsertype());
             ResultSet rSet = pstmt.executeQuery();//取得结果
             if (rSet.next()) {
-                user.setUsername(rSet.getString(1));//取得用户名
+                //读取用户权限值
+                user.setUserpri(rSet.getInt(1));
                 flag = true;
             }
         } catch (Exception e) {
