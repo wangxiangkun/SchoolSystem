@@ -11,6 +11,7 @@
     <title>Login</title>
 </head>
 <script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="/js/Cookies.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $("#login_button").click(function () {
@@ -24,6 +25,13 @@
                         var msg = data;
                         var status = msg.status;
                         if (0 == status) {
+                            /*
+                            var name = document.getElementById("username").value;
+                            var usertime = new Date();
+                            Cookies.set('username', name);
+                            Cookies.set('pri'), msg.pri);
+                            Cookies.set('time', usertime);
+                            */
                             window.location.href="StudentIndex.jsp";
                         } else {
                             alert("用户名或密码错误!");
