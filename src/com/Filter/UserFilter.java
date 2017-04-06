@@ -27,7 +27,7 @@ public class UserFilter implements Filter {
             filterChain.doFilter(servletRequest, servletResponse);
         } else {
             // 跳转到提示登陆页面
-            servletRequest.getRequestDispatcher("Unlogin.jsp").forward(servletRequest, servletResponse);
+            servletRequest.getRequestDispatcher("NotLoggedIn.jsp").forward(servletRequest, servletResponse);
         }
     }
 

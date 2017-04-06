@@ -18,7 +18,7 @@
             var flag = Check();
             if (true == flag) {
                 $.ajax({
-                    url: "/LoginServlet",
+                    url: "/SignInServlet",
                     type: "POST",
                     data: $("#form").serialize(),
                     success: function (data) {
@@ -39,7 +39,7 @@
                     },
                     error: function (data) {
                         alert("用户名或密码错误");
-                        window.location.href="Login.jsp";
+                        window.location.href="SignIn.jsp";
                     }
                 })
             }

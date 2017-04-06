@@ -16,8 +16,8 @@ import java.io.PrintWriter;
 /**
  * Created by wxk on 2017/3/30.
  */
-@WebServlet(name = "LoginServlet", urlPatterns = "/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet(name = "SignInServlet", urlPatterns = "/SignInServlet")
+public class SignInServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
