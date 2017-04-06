@@ -20,12 +20,8 @@ public class LogOutServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        //test
-        System.out.println("servlet log out.");
         session.removeAttribute("username");
 
-        //test
-        System.out.println("log out removed session.");
         PrintWriter pw = response.getWriter();
         pw.printf("{\"status\":0}");
         response.setContentType("text/json");

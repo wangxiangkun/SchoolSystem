@@ -17,6 +17,7 @@
 /out
 /.idea
 /web/js
+/web/css
 SchoolSystem.iml
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml

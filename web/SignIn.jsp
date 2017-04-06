@@ -23,16 +23,14 @@
                     data: $("#form").serialize(),
                     success: function (data) {
                         var msg = data;
-                        var status = msg.status;
-                        if (0 == status) {
-                            /*
-                            var name = document.getElementById("username").value;
-                            var usertime = new Date();
-                            Cookies.set('username', name);
-                            Cookies.set('pri'), msg.pri);
-                            Cookies.set('time', usertime);
-                            */
-                            window.location.href="StudentIndex.jsp";
+                        if (0 == msg.status) {
+                            if (3 == msg.pri) {
+                                window.location.href="LoggedIn/Student/StudentIndex.jsp";
+                            } else if (2 == msg.pri) {
+                                window.location.href="LoggedIn/Teacher/TeacherIndex.jsp";
+                            } else {
+                                alert("用户名或密码错误!");
+                            }
                         } else {
                             alert("用户名或密码错误!");
                         }

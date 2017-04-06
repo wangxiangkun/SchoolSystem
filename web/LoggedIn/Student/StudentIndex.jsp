@@ -10,20 +10,18 @@
 <head>
     <title>学生中心</title>
 </head>
-<script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-3.2.0.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $("#logout_button").click(function () {
-            alert("1");
             $.ajax({
                 url: "/LogOutServlet",
                 type: "POST",
                 data: "0",
                 success: function (data) {
-                    alert("2");
                     var msg = data.status;
                     if (0 == msg) {
-                        window.location.href = "SignIn.jsp";
+                        window.location.href = "../../SignIn.jsp";
                     } else {
                         alert("登出异常!");
                     }

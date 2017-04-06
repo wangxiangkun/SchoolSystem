@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * Created by wxk on 2017/4/5.
  */
-//@WebFilter(filterName = " UserFilter", urlPatterns= "/Filter")
+@WebFilter(filterName = " UserFilter", urlPatterns= "/LoggedIn/*")
 public class UserFilter implements Filter {
     public void destroy() {
     }
@@ -27,12 +27,11 @@ public class UserFilter implements Filter {
             filterChain.doFilter(servletRequest, servletResponse);
         } else {
             // 跳转到提示登陆页面
-            servletRequest.getRequestDispatcher("NotLoggedIn.jsp").forward(servletRequest, servletResponse);
+            servletRequest.getRequestDispatcher("../NotLoggedIn.jsp").forward(servletRequest, servletResponse);
         }
     }
 
     public void init(FilterConfig config) throws ServletException {
-
     }
 
 }
