@@ -32,4 +32,14 @@ public class UserDAOProxy implements IUserDAO {
         }
         return flag;
     }
+
+    public void addUser(User user) throws Exception {
+        try {
+            dao.addUser(user);
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            dbc.close();
+        }
+    }
 }

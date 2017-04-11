@@ -2,6 +2,7 @@ package com.Dao;
 
 import com.User.User;
 
+import java.rmi.server.ExportException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -46,5 +47,28 @@ public class UserDAOImpI implements IUserDAO {
 
         }
         return flag;
+    }
+
+    public void addUser(User user) throws Exception {
+        try {
+            String sql = "insert into user values(?;?;?;?)";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, user.getUsername());
+            pstmt.setString(2, user.getPassword());
+            pstmt.setString(3, user.getUsertype());
+            pstmt.setInt(4, user.getUserpri());
+            pstmt.executeUpdate();
+
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if (null != pstmt) {
+                try {
+                    pstmt.close();
+                } catch (Exception e) {
+                    throw e;
+                }
+            }
+        }
     }
 }
