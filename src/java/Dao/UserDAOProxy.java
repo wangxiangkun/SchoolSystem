@@ -1,6 +1,6 @@
-package com.Dao;
+package Dao;
 
-import com.User.User;
+import User.User;
 
 /**
  * Created by wxk on 2017/3/30.

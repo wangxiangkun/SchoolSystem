@@ -1,7 +1,7 @@
-package com.Servlet;
+package Servlet;
 
-import com.Dao.UserDAOProxy;
-import com.User.User;
+import Dao.UserDAOProxy;
+import User.User;
 import jdk.nashorn.internal.parser.JSONParser;
 
 import javax.servlet.ServletException;

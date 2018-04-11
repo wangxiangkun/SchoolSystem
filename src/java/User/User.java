@@ -1,4 +1,4 @@
-package com.User;
+package User;
 
 /**
  * Created by wxk on 2017/3/29.

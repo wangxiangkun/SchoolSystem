@@ -1,8 +1,7 @@
-package com.Dao;
+package Dao;
 
-import com.User.User;
+import User.User;
 
-import java.rmi.server.ExportException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

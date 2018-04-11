@@ -1,7 +1,7 @@
-package com.Servlet;
+package Servlet;
 
-import com.Dao.UserDAOProxy;
-import com.User.User;
+import Dao.UserDAOProxy;
+import User.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
