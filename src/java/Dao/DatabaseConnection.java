@@ -13,17 +13,15 @@ public class DatabaseConnection {
     private static final String DBURL = "jdbc:mysql://localhost:3306/school_system";
     private static final String DBUSER = "root";
     private static final String DBPASS = "123456";
-    private Connection connection = null;
+    private Connection connection;
 
-    public DatabaseConnection() throws Exception {
+    public DatabaseConnection() {
         try {
-            //数据库操作可能出现异常
             Class.forName(DBDRIVER);
             connection = DriverManager.getConnection(DBURL, DBUSER, DBPASS);
-
-        } catch (Exception exception) {
-            throw exception;
-        } finally {
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(-1);
         }
     }
 
@@ -31,12 +29,13 @@ public class DatabaseConnection {
         return connection;
     }
 
-    public void close() throws Exception {
+    public void close() {
         if (connection != null) {
             try {
                 connection.close();
             } catch (Exception e) {
-                throw e;
+                System.out.println("Warning: Can not close database connection.");
+                e.printStackTrace();
             }
         }
     }

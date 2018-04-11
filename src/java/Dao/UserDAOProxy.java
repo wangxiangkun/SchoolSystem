@@ -6,22 +6,23 @@ import User.User;
  * Created by wxk on 2017/3/30.
  */
 public class UserDAOProxy implements IUserDAO {
-    private DatabaseConnection dbc = null;//定义数据库连接
-    private IUserDAO dao = null;//定义DAO接口
+    //定义数据库连接
+    private DatabaseConnection dbc = null;
+    //定义DAO接口
+    private IUserDAO dao;
 
-    public UserDAOProxy(){
+    public UserDAOProxy() {
         try {
             //实例化数据库连接
             dbc = new DatabaseConnection();
+            dao = new UserDAOImpI(dbc.getConnection());
         } catch (Exception e) {
             e.printStackTrace();
         }
-        dao = new UserDAOImpI(dbc.getConnection());
-
     }
 
     public boolean findLogin(User user) throws Exception {
-        boolean flag = false;
+        boolean flag;
 
         try {
             flag = dao.findLogin(user);

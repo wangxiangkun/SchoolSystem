@@ -14,7 +14,7 @@ public class UserDAOImpI implements IUserDAO {
     private PreparedStatement pstmt = null;//定义数据库操作对象
 
     //设置数据库连接
-    public UserDAOImpI(Connection conn){
+    public UserDAOImpI(Connection conn) {
         this.conn = conn;
     }
 
@@ -33,15 +33,13 @@ public class UserDAOImpI implements IUserDAO {
                 flag = true;
             }
         } catch (Exception e) {
-            throw e;
+            e.printStackTrace();
         } finally {
             //关闭操作
-            if (null != pstmt) {
-                try {
-                    pstmt.close();
-                } catch (Exception e) {
-                    throw e;
-                }
+            if (null != pstmt) try {
+                pstmt.close();
+            } catch (Exception e) {
+                throw e;
             }
 
         }
