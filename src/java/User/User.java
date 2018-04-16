@@ -9,8 +9,6 @@ public class User {
     private String password;
     private String usertype;
     private int userpri;
-    //private String realname;
-    //private String sex;
 
     public int getUserid() {
         return userid;
